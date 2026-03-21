@@ -3,189 +3,561 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Save Salsa by the Sea</title>
+    <title>💃🌊 Save Salsa by the Sea 🌊💃</title>
     <style>
-      :root {
-        --bg: #f4f8ff;
-        --card: #ffffff;
-        --ink: #1a2440;
-        --muted: #4f5d7a;
-        --brand: #0d6f73;
-        --brand-hover: #095558;
-        --shadow: 0 10px 28px rgba(26, 36, 64, 0.12);
-      }
-
       * {
         box-sizing: border-box;
-      }
-
-      body {
         margin: 0;
-        min-height: 100vh;
-        font-family: "Avenir Next", "Segoe UI", sans-serif;
-        color: var(--ink);
-        background: radial-gradient(
-          circle at top right,
-          #d4f5ee 0%,
-          #f4f8ff 45%,
-          #e8f0ff 100%
-        );
-        display: grid;
-        place-items: center;
-        padding: 1rem;
+        padding: 0;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #f7f5f2;
+        color: #1a1a1a;
+        padding: 24px 16px 64px;
+        max-width: 680px;
+        margin: 0 auto;
       }
 
-      main {
-        width: 100%;
-        max-width: 760px;
-        background: var(--card);
-        border-radius: 20px;
-        box-shadow: var(--shadow);
-        padding: 1.25rem;
-      }
-
-      h1 {
-        margin: 0 0 0.6rem;
-        font-size: clamp(1.4rem, 4vw, 2.2rem);
-        line-height: 1.2;
-      }
-
-      p {
-        margin: 0 0 1.2rem;
-        color: var(--muted);
-      }
-
-      .row {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 0.6rem;
-        margin-bottom: 0.75rem;
-      }
-
-      .btn {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        min-height: 46px;
-        border: 0;
+      .hero {
+        background: #c8392b;
+        color: white;
         border-radius: 12px;
+        padding: 24px 20px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .hero h1 {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+      .hero p {
+        font-size: 14px;
+        opacity: 0.9;
+        line-height: 1.6;
+      }
+
+      .instructions {
+        background: white;
+        border-radius: 12px;
+        border: 1px solid #e8e4de;
+        padding: 16px 20px;
+        margin-bottom: 28px;
+      }
+      .instructions h2 {
+        font-size: 14px;
+        font-weight: 600;
+        color: #0d7377;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .instructions ol {
+        padding-left: 18px;
+      }
+      .instructions li {
+        font-size: 14px;
+        color: #444;
+        line-height: 1.8;
+      }
+      .instructions .note {
+        font-size: 13px;
+        color: #888;
+        margin-top: 10px;
+      }
+
+      .section-label {
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #999;
+        margin: 0 0 12px;
+      }
+      .section-block {
+        margin-bottom: 32px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 12px;
+        border: 1px solid #e8e4de;
+        margin-bottom: 10px;
+        padding: 14px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .card-info {
+        flex: 1;
+        min-width: 0;
+      }
+      .card-name {
+        font-size: 15px;
+        font-weight: 600;
+        color: #1a1a1a;
+      }
+      .card-role {
+        font-size: 13px;
+        color: #888;
+        margin-top: 2px;
+      }
+      .card-email-addr {
+        font-size: 12px;
+        color: #bbb;
+        margin-top: 2px;
+        word-break: break-all;
+      }
+      .card-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .card-list li {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+        padding: 12px 0;
+        border-bottom: 1px solid #f0ece6;
+        align-items: baseline;
+      }
+      .card-list li:last-child {
+        border-bottom: none;
+      }
+      .card-list-item-info {
+        flex: 1;
+        min-width: 0;
+      }
+      .card-list-name {
+        font-size: 15px;
+        font-weight: 600;
+        color: #1a1a1a;
+      }
+      .card-list-role {
+        font-size: 13px;
+        color: #888;
+        margin-top: 2px;
+      }
+      .card-list-email {
+        font-size: 12px;
+        color: #bbb;
+        margin-top: 2px;
+        word-break: break-all;
+      }
+      .send-btn {
+        background: #c8392b;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 18px;
+        font-size: 14px;
+        font-weight: 500;
         text-decoration: none;
-        font-weight: 700;
-        letter-spacing: 0.01em;
-        background: var(--brand);
-        color: #fff;
-        transition:
-          background-color 0.2s ease,
-          transform 0.2s ease;
+        white-space: nowrap;
+        cursor: pointer;
+        display: inline-block;
+      }
+      .send-btn:active {
+        opacity: 0.85;
       }
 
-      .btn:hover,
-      .btn:focus-visible {
-        background: var(--brand-hover);
-        transform: translateY(-1px);
+      .accordion {
+        background: white;
+        border-radius: 12px;
+        border: 2px solid #0d7377;
+        margin-top: 40px;
+        overflow: hidden;
       }
-
-      .btn.secondary {
-        background: #eaf4f5;
-        color: #174447;
+      .accordion-toggle {
+        width: 100%;
+        padding: 16px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+        color: #0d7377;
+        text-align: left;
       }
-
-      .btn.secondary:hover,
-      .btn.secondary:focus-visible {
-        background: #d7ebed;
+      .accordion-toggle:hover {
+        background: #f0fafa;
       }
-
-      @media (min-width: 640px) {
-        main {
-          padding: 1.8rem;
-        }
-
-        .row {
-          grid-template-columns: 1fr 1fr;
-        }
+      .accordion-arrow {
+        font-size: 12px;
+        color: #0d7377;
+        transition: transform 0.2s;
+      }
+      .accordion-arrow.open {
+        transform: rotate(180deg);
+      }
+      .accordion-body {
+        display: none;
+        padding: 0 20px 20px;
+        border-top: 1px solid #d0eeee;
+      }
+      .accordion-body.visible {
+        display: block;
+      }
+      .accordion-intro {
+        font-size: 13px;
+        color: #555;
+        line-height: 1.6;
+        margin: 14px 0 16px;
+      }
+      .manual-list {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 20px;
+      }
+      .manual-list li {
+        font-size: 13px;
+        color: #444;
+        padding: 6px 0;
+        border-bottom: 1px solid #f0ece6;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .manual-list li:last-child {
+        border-bottom: none;
+      }
+      .manual-name {
+        font-weight: 600;
+      }
+      .manual-email {
+        color: #0d7377;
+        word-break: break-all;
+      }
+      .subject-line {
+        font-size: 13px;
+        color: #666;
+        margin-bottom: 10px;
+      }
+      .subject-line span {
+        font-weight: 600;
+        color: #1a1a1a;
+      }
+      .divider {
+        height: 1px;
+        background: #e8e4de;
+        margin: 10px 0 14px;
+      }
+      .email-body-text {
+        font-size: 13px;
+        color: #444;
+        line-height: 1.75;
+        white-space: pre-wrap;
+        background: #faf9f7;
+        border-radius: 8px;
+        padding: 14px 16px;
+        border: 1px solid #ede9e3;
+      }
+      .copy-btn {
+        background: #0d7377;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 9px 16px;
+        font-size: 13px;
+        font-weight: 500;
+        cursor: pointer;
+        margin-top: 12px;
+        display: inline-block;
+      }
+      .copy-btn:hover {
+        background: #0a5f63;
+      }
+      .copy-btn.copied {
+        background: #2e7d32;
       }
     </style>
   </head>
   <body>
-    <main>
-      <h1>Save Salsa by the Sea</h1>
-      <p>Tap any button to send a pre-filled email in your default mail app.</p>
+    <div class="hero">
+      <h1>💃🌊 Save Salsa by the Sea 🌊💃</h1>
+      <p>
+        Salsa by the Sea has danced freely on the Santa Cruz Wharf every Sunday
+        for 24 years — and now that's at risk. Email our city council and Parks
+        &amp; Rec to help us keep it going. Takes 2 minutes.
+      </p>
+    </div>
 
-      <div class="row">
-        <a
-          class="btn secondary"
-          href="mailto:mail@samir.tech?subject=Support%20Save%20Salsa%20by%20the%20Sea%20-%20Mayor&body=Hello%20Mayor%2C%0A%0AI%20support%20the%20Save%20Salsa%20by%20the%20Sea%20effort.%20Please%20protect%20this%20event%20and%20help%20it%20continue.%0A%0AThank%20you%2C"
-        >
-          Mayor
-        </a>
-        <a
-          class="btn"
-          href="mailto:mail@samir.tech?subject=Please%20Support%20Save%20Salsa%20by%20the%20Sea&body=Hello%20Mayor%2C%0A%0AI%20am%20writing%20to%20ask%20for%20your%20support%20for%20Save%20Salsa%20by%20the%20Sea.%20This%20event%20matters%20to%20our%20community.%0A%0ASincerely%2C"
-        >
-          Mail the Mayor
-        </a>
-      </div>
+    <div class="instructions">
+      <h2>How to send</h2>
+      <ol>
+        <li>
+          Tap the red <strong>Send to City Council</strong> or
+          <strong>Send to Parks & Recreation</strong> button — your email app
+          opens with all addresses and the message pre-filled.
+        </li>
+        <li>
+          Hit send — or add your name at the end if you'd like to personalize it
+        </li>
+      </ol>
+      <p class="note">
+        Button not working? Scroll to the bottom to copy and send manually.
+      </p>
+    </div>
 
-      <div class="row">
-        <a
-          class="btn secondary"
-          href="mailto:mail@samir.tech?subject=Support%20Save%20Salsa%20by%20the%20Sea%20-%20Councilmember%201&body=Hello%20Councilmember%201%2C%0A%0AI%20support%20the%20Save%20Salsa%20by%20the%20Sea%20effort.%20Please%20help%20keep%20this%20event%20alive.%0A%0AThank%20you%2C"
-        >
-          Councilmember 1
-        </a>
-        <a
-          class="btn"
-          href="mailto:mail@samir.tech?subject=Please%20Support%20Save%20Salsa%20by%20the%20Sea&body=Hello%20Councilmember%201%2C%0A%0AI%20am%20writing%20to%20ask%20for%20your%20support%20for%20Save%20Salsa%20by%20the%20Sea.%20This%20event%20is%20important%20to%20our%20community.%0A%0ASincerely%2C"
-        >
-          Mail Councilmember 1
-        </a>
-      </div>
+    <div class="section-block">
+      <div class="section-label">City Council</div>
+      <a
+        class="send-btn"
+        id="council-btn"
+        style="
+          display: block;
+          text-align: center;
+          margin-bottom: 14px;
+          padding: 12px 20px;
+        "
+      >
+        Send to City Council →
+      </a>
+      <div id="council-cards"></div>
+    </div>
 
-      <div class="row">
-        <a
-          class="btn secondary"
-          href="mailto:mail@samir.tech?subject=Support%20Save%20Salsa%20by%20the%20Sea%20-%20Councilmember%202&body=Hello%20Councilmember%202%2C%0A%0AI%20support%20the%20Save%20Salsa%20by%20the%20Sea%20effort.%20Please%20help%20keep%20this%20event%20alive.%0A%0AThank%20you%2C"
-        >
-          Councilmember 2
-        </a>
-        <a
-          class="btn"
-          href="mailto:mail@samir.tech?subject=Please%20Support%20Save%20Salsa%20by%20the%20Sea&body=Hello%20Councilmember%202%2C%0A%0AI%20am%20writing%20to%20ask%20for%20your%20support%20for%20Save%20Salsa%20by%20the%20Sea.%20This%20event%20is%20important%20to%20our%20community.%0A%0ASincerely%2C"
-        >
-          Mail Councilmember 2
-        </a>
-      </div>
+    <!-- <div class="section-block">
+      <div class="section-label">Parks &amp; Recreation</div>
+      <a class="send-btn" id="parks-btn" style="display: block; text-align: center; margin-bottom: 14px; padding: 12px 20px;">
+        Send to Parks & Recreation →
+      </a>
+      <div id="parks-cards"></div>
+    </div> -->
 
-      <div class="row">
-        <a
-          class="btn secondary"
-          href="mailto:mail@samir.tech?subject=Support%20Save%20Salsa%20by%20the%20Sea%20-%20Councilmember%203&body=Hello%20Councilmember%203%2C%0A%0AI%20support%20the%20Save%20Salsa%20by%20the%20Sea%20effort.%20Please%20help%20keep%20this%20event%20alive.%0A%0AThank%20you%2C"
-        >
-          Councilmember 3
-        </a>
-        <a
-          class="btn"
-          href="mailto:mail@samir.tech?subject=Please%20Support%20Save%20Salsa%20by%20the%20Sea&body=Hello%20Councilmember%203%2C%0A%0AI%20am%20writing%20to%20ask%20for%20your%20support%20for%20Save%20Salsa%20by%20the%20Sea.%20This%20event%20is%20important%20to%20our%20community.%0A%0ASincerely%2C"
-        >
-          Mail Councilmember 3
-        </a>
-      </div>
+    <div class="accordion" id="accordion">
+      <button class="accordion-toggle" onclick="toggleAccordion()">
+        <span>Can't use the buttons? Send manually here</span>
+        <span class="accordion-arrow" id="arrow">▼</span>
+      </button>
+      <div class="accordion-body" id="accordion-body">
+        <p class="accordion-intro">
+          Copy the email addresses and draft below, then paste into your email
+          app. Send one email to each person, or send one email to all of them
+          at once by putting all addresses in the To field.
+        </p>
 
-      <div class="row">
-        <a
-          class="btn secondary"
-          href="mailto:mail@samir.tech?subject=Support%20Save%20Salsa%20by%20the%20Sea%20-%20Councilmember%204&body=Hello%20Councilmember%204%2C%0A%0AI%20support%20the%20Save%20Salsa%20by%20the%20Sea%20effort.%20Please%20help%20keep%20this%20event%20alive.%0A%0AThank%20you%2C"
+        <div class="section-label" style="margin-top: 4px">
+          All email addresses
+        </div>
+        <ul class="manual-list" id="manual-list"></ul>
+
+        <div class="section-label">Email draft</div>
+        <button
+          class="copy-btn"
+          id="copy-shared"
+          onclick="copyShared()"
+          style="margin-top: 6px"
         >
-          Councilmember 4
-        </a>
-        <a
-          class="btn"
-          href="mailto:mail@samir.tech?subject=Please%20Support%20Save%20Salsa%20by%20the%20Sea&body=Hello%20Councilmember%204%2C%0A%0AI%20am%20writing%20to%20ask%20for%20your%20support%20for%20Save%20Salsa%20by%20the%20Sea.%20This%20event%20is%20important%20to%20our%20community.%0A%0ASincerely%2C"
-        >
-          Mail Councilmember 4
-        </a>
+          Copy email draft
+        </button>
+        <div class="subject-line" style="margin-top: 12px">
+          Subject: <span id="subject-display"></span>
+        </div>
+        <div class="divider"></div>
+        <div class="email-body-text" id="shared-body"></div>
       </div>
-    </main>
+    </div>
+
+    <script>
+      const subject =
+        "Salsa by the Sea: 24 Years of Community, Culture & Joy on the Santa Cruz Wharf – Request for Your Support";
+
+      const sharedBody = `Dear Santa Cruz City Council and Parks and Recreation,
+
+I am writing to you on behalf of Salsa by the Sea, a beloved free community gathering that has taken place on the Santa Cruz Wharf for nearly 24 years. What began as a simple love of Latin dance has grown into something far greater — a vital, living institution that reflects the very best of Santa Cruz: its diversity, its warmth, and its enduring spirit of community.
+
+Every week, dancers of all ages, backgrounds, and abilities come together on the Wharf to move, connect, and celebrate. For many participants, Salsa by the Sea is their primary form of social exercise — a joyful, accessible way to stay active and healthy. For others, it is a lifeline of friendship and belonging in a city where the rising cost of living has made simple pleasures increasingly rare. Because our event is entirely free of charge, it remains one of the few gathering spaces in Santa Cruz that truly welcomes everyone, regardless of income.
+
+Perhaps most importantly, Salsa by the Sea has become a place where cultures unite. Our dancers represent Latin America, Asia, Europe, Africa, and beyond. In a moment when many of our neighbors — particularly within California's Latino and immigrant communities — feel frightened, isolated, and reluctant to leave their homes in the current climate surrounding federal immigration enforcement, Salsa by the Sea offers something quietly powerful: a safe, joyful, public space where all are seen, welcomed, and celebrated. People who might otherwise remain at home find courage and community on the wharf stage and surrounding area. That is not a small thing. That is a gift to our entire city.
+
+With this in mind, we are reaching out to request your support on two important matters:
+
+1. Recognition as a Cultural Entity
+We are currently experiencing pushback from neighboring businesses on the Wharf, and we believe that formal recognition as a cultural entity by the City of Santa Cruz would help protect our ability to continue gathering. Salsa by the Sea is not merely an event — it is a 24-year cultural tradition woven into the identity of this city. We respectfully ask whether you would be willing to help us pursue or advocate for that designation and to continue to be able to dance every Sunday on the wharf (as we have done for the last 24 years).
+
+2. A "Latin Dance Day" Celebration on the Wharf
+As we approach our 24th anniversary, we would love to mark this milestone with a special Latin Dance Day — a community celebration that invites Wharf businesses, local organizations, and the broader Santa Cruz community to participate alongside us. We envision this as an opportunity to strengthen relationships with our Wharf neighbors, showcase the positive economic and cultural energy our dancers bring to the area, and honor nearly a quarter century of dance, joy, and togetherness.
+
+We would be deeply grateful if the City of Santa Cruz would consider co-sponsoring this celebration. Your visible support would mean the world to our community — and send a powerful message that Santa Cruz stands with all of its people.
+
+Thank you sincerely for your time and for your service to this city. We would welcome the opportunity to speak with you further, share our story, and explore how we might work together.
+
+Thank you,
+Concerned Community Member
+Salsa by the Sea`;
+
+      document.getElementById("subject-display").textContent = subject;
+      document.getElementById("shared-body").textContent = sharedBody;
+
+      function toggleAccordion() {
+        const body = document.getElementById("accordion-body");
+        const arrow = document.getElementById("arrow");
+        body.classList.toggle("visible");
+        arrow.classList.toggle("open");
+      }
+
+      function copyShared() {
+        navigator.clipboard.writeText(sharedBody).then(() => {
+          const btn = document.getElementById("copy-shared");
+          btn.textContent = "Copied!";
+          btn.classList.add("copied");
+          setTimeout(() => {
+            btn.textContent = "Copy email draft";
+            btn.classList.remove("copied");
+          }, 2000);
+        });
+      }
+
+      function makeBody(firstName) {
+        return sharedBody.replace("Dear [Name],", `Dear ${firstName},`);
+      }
+
+      const council = [
+        {
+          name: "Mayor Fred Keeley",
+          firstName: "Mayor Keeley",
+          role: "Mayor",
+          email: "fkeeley@santacruzca.gov",
+        },
+        {
+          name: "Vice Mayor Shebreh Kalantari-Johnson",
+          firstName: "Vice Mayor Kalantari-Johnson",
+          role: "Vice Mayor — District 3",
+          email: "skalantari-johnson@santacruzca.gov",
+        },
+        {
+          name: "Councilmember Gabriela Trigueiro",
+          firstName: "Councilmember Trigueiro",
+          role: "District 1",
+          email: "gtrigueiro@santacruzca.gov",
+        },
+        {
+          name: "Councilmember Sonja Brunner",
+          firstName: "Councilmember Brunner",
+          role: "District 2",
+          email: "sbrunner@santacruzca.gov",
+        },
+        {
+          name: "Councilmember Scott Newsome",
+          firstName: "Councilmember Newsome",
+          role: "District 4",
+          email: "snewsome@santacruzca.gov",
+        },
+        {
+          name: "Councilmember Susie O'Hara",
+          firstName: "Councilmember O'Hara",
+          role: "District 5",
+          email: "sohara@santacruzca.gov",
+        },
+        {
+          name: "Councilmember Renee Golder",
+          firstName: "Councilmember Golder",
+          role: "District 6",
+          email: "rgolder@santacruzca.gov",
+        },
+      ];
+
+      /* const parks = [
+        {
+          name: "Lindsay Bass",
+          firstName: "Ms. Bass",
+          role: "Principal Management Analyst",
+          email: "lbass@santacruzca.gov",
+        },
+        {
+          name: "Tony Elliot",
+          firstName: "Mr. Elliot",
+          role: "Director of Parks and Recreation",
+          email: "telliot@santacruzca.gov",
+        },
+        {
+          name: "Mike Godsy",
+          firstName: "Mr. Godsy",
+          role: "Superintendent of Parks",
+          email: "Mike.Godsy@santacruzca.gov",
+        },
+        {
+          name: "Tremain Hedden-Jones",
+          firstName: "Mr. Hedden-Jones",
+          role: "Superintendent of Recreation",
+          email: "tjones@santacruzca.gov",
+        },
+        {
+          name: "Joyce Blaschke",
+          firstName: "Ms. Blaschke",
+          role: "Community Relations Specialist",
+          email: "jblaschke@santacruzca.gov",
+        },
+        {
+          name: "Parks & Recreation Department",
+          firstName: "Parks & Recreation Team",
+          role: "General inquiry",
+          email: "parksandrec@santacruzca.gov",
+        },
+      ]; */
+
+      const parks = [];
+      const everyone = [...council, ...parks];
+
+      function makeConsolidatedCard(groupMembers) {
+        const card = document.createElement("div");
+        card.className = "card";
+        const listHTML = groupMembers
+          .map(
+            (person) =>
+              `<li>
+          <div class="card-list-item-info">
+            <div class="card-list-name">${person.name}</div>
+            <div class="card-list-role">${person.role}</div>
+            <div class="card-list-email">${person.email}</div>
+          </div>
+        </li>`,
+          )
+          .join("");
+        card.innerHTML = `<ul class="card-list">${listHTML}</ul>`;
+        return card;
+      }
+
+      function makeGroupBody(groupName, firstNames) {
+        return sharedBody.replace("Dear [Name],", `Dear ${groupName},`);
+      }
+
+      document
+        .getElementById("council-cards")
+        .appendChild(makeConsolidatedCard(council));
+      /* document
+        .getElementById("parks-cards")
+        .appendChild(makeConsolidatedCard(parks)); */
+
+      // Set up group send buttons
+      const councilEmails = council.map((p) => p.email).join(",");
+      const councilBody = makeGroupBody(
+        "City Council",
+        council.map((p) => p.firstName),
+      );
+      const councilMailto = `mailto:${councilEmails}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(councilBody)}`;
+      document.getElementById("council-btn").href = councilMailto;
+
+      /* const parksEmails = parks.map((p) => p.email).join(",");
+      const parksBody = makeGroupBody("Parks and Recreation", parks.map((p) => p.firstName));
+      const parksMailto = `mailto:${parksEmails}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(parksBody)}`;
+      document.getElementById("parks-btn").href = parksMailto; */
+
+      const manualList = document.getElementById("manual-list");
+      everyone.forEach((p) => {
+        const li = document.createElement("li");
+        li.innerHTML = `<span class="manual-name">${p.name}</span><span class="manual-email">${p.email}</span>`;
+        manualList.appendChild(li);
+      });
+    </script>
   </body>
 </html>
