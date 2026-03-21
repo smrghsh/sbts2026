@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Save Salsa by the Sea</title>
+    <style>
+      :root {
+        --bg: #f4f8ff;
+        --card: #ffffff;
+        --ink: #1a2440;
+        --muted: #4f5d7a;
+        --brand: #0d6f73;
+        --brand-hover: #095558;
+        --shadow: 0 10px 28px rgba(26, 36, 64, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Avenir Next", "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: radial-gradient(
+          circle at top right,
+          #d4f5ee 0%,
+          #f4f8ff 45%,
+          #e8f0ff 100%
+        );
+        display: grid;
+        place-items: center;
+        padding: 1rem;
+      }
+
+      main {
+        width: 100%;
+        max-width: 760px;
+        background: var(--card);
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+        padding: 1.25rem;
+      }
+
+      h1 {
+        margin: 0 0 0.6rem;
+        font-size: clamp(1.4rem, 4vw, 2.2rem);
+        line-height: 1.2;
+      }
+
+      p {
+        margin: 0 0 1.2rem;
+        color: var(--muted);
+      }
+
+      .row {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .btn {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        min-height: 46px;
+        border: 0;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        background: var(--brand);
+        color: #fff;
+        transition:
+          background-color 0.2s ease,
+          transform 0.2s ease;
+      }
+
+      .btn:hover,
+      .btn:focus-visible {
+        background: var(--brand-hover);
+        transform: translateY(-1px);
+      }
+
+      .btn.secondary {
+        background: #eaf4f5;
+        color: #174447;
+      }
+
+      .btn.secondary:hover,
+      .btn.secondary:focus-visible {
+        background: #d7ebed;
+      }
+
+      @media (min-width: 640px) {
+        main {
+          padding: 1.8rem;
+        }
+
+        .row {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Save Salsa by the Sea</h1>
+      <p>Tap any button to send a pre-filled email in your default mail app.</p>
+
+      <div class="row">
+        <a
+          class="btn secondary"
+          href="mailto:mail@samir.tech?subject=Support%20Save%20Salsa%20by%20the%20Sea%20-%20Mayor&body=Hello%20Mayor%2C%0A%0AI%20support%20the%20Save%20Salsa%20by%20the%20Sea%20effort.%20Please%20protect%20this%20event%20and%20help%20it%20continue.%0A%0AThank%20you%2C"
+        >
+          Mayor
+        </a>
+        <a
+          class="btn"
+          href="mailto:mail@samir.tech?subject=Please%20Support%20Save%20Salsa%20by%20the%20Sea&body=Hello%20Mayor%2C%0A%0AI%20am%20writing%20to%20ask%20for%20your%20support%20for%20Save%20Salsa%20by%20the%20Sea.%20This%20event%20matters%20to%20our%20community.%0A%0ASincerely%2C"
+        >
+          Mail the Mayor
+        </a>
+      </div>
+
+      <div class="row">
+        <a
+          class="btn secondary"
+          href="mailto:mail@samir.tech?subject=Support%20Save%20Salsa%20by%20the%20Sea%20-%20Councilmember%201&body=Hello%20Councilmember%201%2C%0A%0AI%20support%20the%20Save%20Salsa%20by%20the%20Sea%20effort.%20Please%20help%20keep%20this%20event%20alive.%0A%0AThank%20you%2C"
+        >
+          Councilmember 1
+        </a>
+        <a
+          class="btn"
+          href="mailto:mail@samir.tech?subject=Please%20Support%20Save%20Salsa%20by%20the%20Sea&body=Hello%20Councilmember%201%2C%0A%0AI%20am%20writing%20to%20ask%20for%20your%20support%20for%20Save%20Salsa%20by%20the%20Sea.%20This%20event%20is%20important%20to%20our%20community.%0A%0ASincerely%2C"
+        >
+          Mail Councilmember 1
+        </a>
+      </div>
+
+      <div class="row">
+        <a
+          class="btn secondary"
+          href="mailto:mail@samir.tech?subject=Support%20Save%20Salsa%20by%20the%20Sea%20-%20Councilmember%202&body=Hello%20Councilmember%202%2C%0A%0AI%20support%20the%20Save%20Salsa%20by%20the%20Sea%20effort.%20Please%20help%20keep%20this%20event%20alive.%0A%0AThank%20you%2C"
+        >
+          Councilmember 2
+        </a>
+        <a
+          class="btn"
+          href="mailto:mail@samir.tech?subject=Please%20Support%20Save%20Salsa%20by%20the%20Sea&body=Hello%20Councilmember%202%2C%0A%0AI%20am%20writing%20to%20ask%20for%20your%20support%20for%20Save%20Salsa%20by%20the%20Sea.%20This%20event%20is%20important%20to%20our%20community.%0A%0ASincerely%2C"
+        >
+          Mail Councilmember 2
+        </a>
+      </div>
+
+      <div class="row">
+        <a
+          class="btn secondary"
+          href="mailto:mail@samir.tech?subject=Support%20Save%20Salsa%20by%20the%20Sea%20-%20Councilmember%203&body=Hello%20Councilmember%203%2C%0A%0AI%20support%20the%20Save%20Salsa%20by%20the%20Sea%20effort.%20Please%20help%20keep%20this%20event%20alive.%0A%0AThank%20you%2C"
+        >
+          Councilmember 3
+        </a>
+        <a
+          class="btn"
+          href="mailto:mail@samir.tech?subject=Please%20Support%20Save%20Salsa%20by%20the%20Sea&body=Hello%20Councilmember%203%2C%0A%0AI%20am%20writing%20to%20ask%20for%20your%20support%20for%20Save%20Salsa%20by%20the%20Sea.%20This%20event%20is%20important%20to%20our%20community.%0A%0ASincerely%2C"
+        >
+          Mail Councilmember 3
+        </a>
+      </div>
+
+      <div class="row">
+        <a
+          class="btn secondary"
+          href="mailto:mail@samir.tech?subject=Support%20Save%20Salsa%20by%20the%20Sea%20-%20Councilmember%204&body=Hello%20Councilmember%204%2C%0A%0AI%20support%20the%20Save%20Salsa%20by%20the%20Sea%20effort.%20Please%20help%20keep%20this%20event%20alive.%0A%0AThank%20you%2C"
+        >
+          Councilmember 4
+        </a>
+        <a
+          class="btn"
+          href="mailto:mail@samir.tech?subject=Please%20Support%20Save%20Salsa%20by%20the%20Sea&body=Hello%20Councilmember%204%2C%0A%0AI%20am%20writing%20to%20ask%20for%20your%20support%20for%20Save%20Salsa%20by%20the%20Sea.%20This%20event%20is%20important%20to%20our%20community.%0A%0ASincerely%2C"
+        >
+          Mail Councilmember 4
+        </a>
+      </div>
+    </main>
+  </body>
+</html>
