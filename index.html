@@ -3,7 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>💃🌊 Save Salsa by the Sea 🌊💃</title>
+    <!-- description -->
+    <meta
+      name="description"
+      content="We have danced freely on the Santa Cruz Wharf every Sunday for 24 years — and now it's at risk. Email our city council to help us keep it going. Takes 2 minutes."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75'>💃</text></svg>"
+    />
+    <title>🌊 Save Salsa by the Sea 🌊</title>
     <style>
       * {
         box-sizing: border-box;
@@ -84,12 +93,12 @@
       }
       .instructions .note {
         font-size: 0.8125em;
-        color: #c8392b;
+        color: #e8820c;
         margin-top: 10px;
         font-weight: 600;
         padding: 8px 12px;
-        background: #fff5f5;
-        border-left: 4px solid #c8392b;
+        background: rgba(245, 150, 56, 0.15);
+        border-left: 4px solid #e8820c;
         border-radius: 4px;
       }
 
@@ -317,9 +326,9 @@
     <div class="hero">
       <h1>Save Salsa by the Sea</h1>
       <p>
-        Salsa by the Sea has danced freely on the Santa Cruz Wharf every Sunday
-        for 24 years — and now that's at risk. Email our city council and Parks
-        &amp; Rec to help us keep it going. Takes 2 minutes.
+        We have danced freely on the Santa Cruz Wharf every Sunday for 24 years
+        — and now it's at risk. Email our city council to help us keep it going.
+        Takes 2 minutes.
       </p>
     </div>
 
@@ -327,32 +336,33 @@
       <h2>How to send</h2>
       <ol>
         <li>
-          Tap the red <strong>Send to City Council</strong> button — your email
+          Tap the red <strong>Email City Council</strong> button — your email
           app opens with all addresses and the message pre-filled.
         </li>
         <li>
           Hit send — or add your name at the end if you'd like to personalize it
         </li>
       </ol>
-      <p class="note">
-        Button not working? Scroll to the bottom to copy and send manually.
-      </p>
-    </div>
-
-    <div class="section-block">
-      <div class="section-label">City Council</div>
       <a
         class="send-btn"
         id="council-btn"
         style="
           display: block;
           text-align: center;
-          margin-bottom: 14px;
+          margin-top: 0.8em;
+          margin-bottom: 0.8em;
           padding: 12px 20px;
         "
       >
-        Send to City Council →
+        Email City Council →
       </a>
+      <p class="note">
+        Button not working? Scroll to the bottom to copy and send manually.
+      </p>
+    </div>
+
+    <div class="section-block">
+      <!-- <div class="section-label">City Council</div> -->
       <div id="council-cards"></div>
     </div>
 
@@ -366,7 +376,7 @@
 
     <div class="accordion" id="accordion">
       <button class="accordion-toggle" onclick="toggleAccordion()">
-        <span>Can't use the buttons? Send manually here</span>
+        <span>Can't use the button? Send manually here</span>
         <span class="accordion-arrow" id="arrow">▼</span>
       </button>
       <div class="accordion-body" id="accordion-body">
