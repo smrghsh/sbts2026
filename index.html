@@ -444,7 +444,36 @@ Salsa by the Sea`;
       }
 
       function copyShared() {
-        navigator.clipboard.writeText(sharedBody).then(() => {
+        const btn = document.getElementById("copy-shared");
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard
+            .writeText(sharedBody)
+            .then(() => {
+              btn.textContent = "Copied!";
+              btn.classList.add("copied");
+              setTimeout(() => {
+                btn.textContent = "Copy email draft";
+                btn.classList.remove("copied");
+              }, 2000);
+            })
+            .catch(() => {
+              fallbackCopy();
+            });
+        } else {
+          fallbackCopy();
+        }
+      }
+
+      function fallbackCopy() {
+        const textArea = document.createElement("textarea");
+        textArea.value = sharedBody;
+        textArea.style.position = "fixed";
+        textArea.style.left = "-999999px";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        try {
+          document.execCommand("copy");
           const btn = document.getElementById("copy-shared");
           btn.textContent = "Copied!";
           btn.classList.add("copied");
@@ -452,7 +481,10 @@ Salsa by the Sea`;
             btn.textContent = "Copy email draft";
             btn.classList.remove("copied");
           }, 2000);
-        });
+        } catch (err) {
+          console.error("Failed to copy:", err);
+        }
+        document.body.removeChild(textArea);
       }
 
       function makeBody(firstName) {
