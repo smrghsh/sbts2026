@@ -28,7 +28,6 @@
         margin: 0 auto;
         position: relative;
       }
-
       body::before {
         content: "";
         position: fixed;
@@ -49,169 +48,120 @@
         background: #c8392b;
         color: white;
         border-radius: 12px;
-        padding: 24px 20px;
-        margin-bottom: 20px;
+        padding: 32px 20px 28px;
         text-align: center;
         position: relative;
         z-index: 1;
       }
       .hero h1 {
-        font-size: 1.25em;
-        font-weight: 600;
-        margin-bottom: 8px;
+        font-size: 26px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        letter-spacing: -0.3px;
       }
       .hero p {
-        font-size: 0.875em;
-        opacity: 0.9;
-        line-height: 1.6;
+        font-size: 15px;
+        opacity: 0.92;
+        line-height: 1.65;
+        max-width: 480px;
+        margin: 0 auto;
       }
 
-      .instructions {
-        background: white;
-        border-radius: 12px;
-        border: 1px solid #e8e4de;
-        padding: 16px 20px;
-        margin-bottom: 28px;
+      .save-date {
+        background: #fff8e1;
+        border-left: 4px solid #f59638;
+        margin: 20px 16px 0;
+        border-radius: 10px;
+        padding: 16px 18px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
         position: relative;
         z-index: 1;
       }
-      .instructions h2 {
-        font-size: 0.875em;
-        font-weight: 600;
-        color: #0d7377;
-        margin-bottom: 8px;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
+      .save-date-icon {
+        font-size: 28px;
+        flex-shrink: 0;
       }
-      .instructions ol {
+      .save-date-text h3 {
+        font-size: 15px;
+        font-weight: 700;
+        color: #b35c00;
+        margin-bottom: 3px;
+      }
+      .save-date-text p {
+        font-size: 13px;
+        color: #7a4500;
+        line-height: 1.5;
+      }
+
+      .action-block {
+        background: white;
+        border-radius: 14px;
+        border: 1px solid #e8e4de;
+        position: relative;
+        z-index: 1;
+        margin: 16px 16px 0;
+        padding: 20px;
+      }
+      .action-block h2 {
+        font-size: 14px;
+        font-weight: 700;
+        color: #0d7377;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        margin-bottom: 10px;
+      }
+      .action-block ol {
         padding-left: 18px;
       }
-      .instructions li {
-        font-size: 0.875em;
+      .action-block li {
+        font-size: 14px;
         color: #444;
         line-height: 1.8;
       }
-      .instructions .note {
-        font-size: 0.8125em;
-        color: #e8820c;
-        margin-top: 10px;
-        font-weight: 600;
-        padding: 8px 12px;
-        background: rgba(245, 150, 56, 0.15);
-        border-left: 4px solid #e8820c;
-        border-radius: 4px;
-      }
 
-      .section-label {
-        font-size: 0.75em;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        color: #999;
-        margin: 0 0 12px;
-      }
-      .section-block {
-        margin-bottom: 32px;
-        position: relative;
-        z-index: 1;
-      }
-
-      .card {
-        background: white;
-        border-radius: 12px;
-        border: 1px solid #e8e4de;
-        margin-bottom: 10px;
-        padding: 14px 20px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        flex-wrap: wrap;
-        position: relative;
-        z-index: 1;
-      }
-      .card-info {
-        flex: 1;
-        min-width: 0;
-      }
-      .card-name {
-        font-size: 0.9375em;
-        font-weight: 600;
-        color: #1a1a1a;
-      }
-      .card-role {
-        font-size: 0.8125em;
-        color: #888;
-        margin-top: 2px;
-      }
-      .card-email-addr {
-        font-size: 0.75em;
-        color: #bbb;
-        margin-top: 2px;
-        word-break: break-all;
-      }
-      .card-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-      .card-list li {
-        display: flex;
-        justify-content: space-between;
-        gap: 12px;
-        flex-wrap: wrap;
-        padding: 12px 0;
-        border-bottom: 1px solid #f0ece6;
-        align-items: baseline;
-      }
-      .card-list li:last-child {
-        border-bottom: none;
-      }
-      .card-list-item-info {
-        flex: 1;
-        min-width: 0;
-      }
-      .card-list-name {
-        font-size: 0.9375em;
-        font-weight: 600;
-        color: #1a1a1a;
-      }
-      .card-list-role {
-        font-size: 0.8125em;
-        color: #888;
-        margin-top: 2px;
-      }
-      .card-list-email {
-        font-size: 0.75em;
-        color: #bbb;
-        margin-top: 2px;
-        word-break: break-all;
-      }
-      .send-btn {
+      .big-btn {
+        display: block;
         background: #c8392b;
         color: white;
+        text-align: center;
         border: none;
-        border-radius: 8px;
-        padding: 10px 18px;
-        font-size: 0.875em;
-        font-weight: 500;
+        border-radius: 10px;
+        padding: 16px;
+        font-size: 16px;
+        font-weight: 600;
         text-decoration: none;
-        white-space: nowrap;
         cursor: pointer;
-        display: inline-block;
+        margin: 12px 0 0;
+        letter-spacing: 0.01em;
       }
-      .send-btn:active {
-        opacity: 0.85;
+      .big-btn:active {
+        opacity: 0.88;
+      }
+      .big-btn.teal {
+        background: #0d7377;
+        margin-top: 10px;
+      }
+
+      .fallback-note {
+        font-size: 13px;
+        color: #f59638;
+        margin-top: 10px;
+        padding: 10px 14px;
+        background: #fff8e1;
+        border-left: 3px solid #f59638;
+        border-radius: 6px;
       }
 
       .accordion {
         background: white;
-        border-radius: 12px;
-        border: 2px solid #0d7377;
-        margin-top: 40px;
-        overflow: hidden;
+        border-radius: 14px;
+        border: 1px solid #e8e4de;
+        margin: 16px 16px 0;
         position: relative;
         z-index: 1;
+        overflow: hidden;
       }
       .accordion-toggle {
         width: 100%;
@@ -222,17 +172,17 @@
         background: none;
         border: none;
         cursor: pointer;
-        font-size: 0.875em;
+        font-size: 14px;
         font-weight: 600;
-        color: #0d7377;
+        color: #1a1a1a;
         text-align: left;
       }
       .accordion-toggle:hover {
-        background: #f0fafa;
+        background: #faf9f7;
       }
       .accordion-arrow {
-        font-size: 0.75em;
-        color: #0d7377;
+        font-size: 11px;
+        color: #aaa;
         transition: transform 0.2s;
       }
       .accordion-arrow.open {
@@ -241,13 +191,129 @@
       .accordion-body {
         display: none;
         padding: 0 20px 20px;
-        border-top: 1px solid #d0eeee;
+        border-top: 1px solid #f0ece6;
       }
       .accordion-body.visible {
         display: block;
       }
-      .accordion-intro {
-        font-size: 0.8125em;
+      .accordion-body p {
+        font-size: 14px;
+        color: #444;
+        line-height: 1.75;
+        margin-top: 14px;
+      }
+      .accordion-body ol,
+      .accordion-body ul {
+        padding-left: 18px;
+        margin-top: 10px;
+      }
+      .accordion-body li {
+        font-size: 14px;
+        color: #444;
+        line-height: 1.8;
+        margin-bottom: 4px;
+      }
+      .accordion-body .disclaimer {
+        font-size: 12px;
+        color: #999;
+        margin-top: 16px;
+        font-style: italic;
+        line-height: 1.6;
+      }
+
+      .section-label {
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.09em;
+        color: #bbb;
+        margin: 24px 16px 8px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .contact-block {
+        background: white;
+        border-radius: 14px;
+        border: 1px solid #e8e4de;
+        margin: 0 16px;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+      }
+      .contact-item {
+        padding: 14px 20px;
+        border-bottom: 1px solid #f5f2ee;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .contact-item:last-child {
+        border-bottom: none;
+      }
+      .contact-info {
+        flex: 1;
+        min-width: 0;
+      }
+      .contact-name {
+        font-size: 15px;
+        font-weight: 600;
+        color: #1a1a1a;
+      }
+      .contact-role {
+        font-size: 13px;
+        color: #888;
+        margin-top: 1px;
+      }
+      .contact-details {
+        font-size: 12px;
+        color: #bbb;
+        margin-top: 3px;
+      }
+      .contact-details a {
+        color: #0d7377;
+        text-decoration: none;
+      }
+      .email-btn {
+        background: #c8392b;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 9px 14px;
+        font-size: 13px;
+        font-weight: 500;
+        text-decoration: none;
+        white-space: nowrap;
+        cursor: pointer;
+        display: inline-block;
+        flex-shrink: 0;
+      }
+      .email-btn:active {
+        opacity: 0.85;
+      }
+
+      .manual-accordion {
+        background: white;
+        border-radius: 14px;
+        border: 2px solid #0d7377;
+        margin: 16px 16px 0;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+      }
+      .manual-accordion .accordion-toggle {
+        color: #0d7377;
+      }
+      .manual-accordion .accordion-toggle:hover {
+        background: #f0fafa;
+      }
+      .manual-accordion .accordion-body {
+        border-top: 1px solid #d0eeee;
+      }
+      .manual-intro {
+        font-size: 13px;
         color: #555;
         line-height: 1.6;
         margin: 14px 0 16px;
@@ -258,9 +324,9 @@
         margin-bottom: 20px;
       }
       .manual-list li {
-        font-size: 0.8125em;
+        font-size: 13px;
         color: #444;
-        padding: 6px 0;
+        padding: 8px 0;
         border-bottom: 1px solid #f0ece6;
         display: flex;
         align-items: baseline;
@@ -274,16 +340,27 @@
       .manual-name {
         font-weight: 600;
       }
+      .manual-contact {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 2px;
+      }
       .manual-email {
         color: #0d7377;
         word-break: break-all;
+        font-size: 12px;
       }
-      .subject-line {
-        font-size: 0.8125em;
+      .manual-phone {
+        color: #888;
+        font-size: 12px;
+      }
+      .subject-row {
+        font-size: 13px;
         color: #666;
         margin-bottom: 10px;
       }
-      .subject-line span {
+      .subject-row span {
         font-weight: 600;
         color: #1a1a1a;
       }
@@ -293,7 +370,7 @@
         margin: 10px 0 14px;
       }
       .email-body-text {
-        font-size: 0.8125em;
+        font-size: 13px;
         color: #444;
         line-height: 1.75;
         white-space: pre-wrap;
@@ -308,7 +385,7 @@
         border: none;
         border-radius: 6px;
         padding: 9px 16px;
-        font-size: 0.8125em;
+        font-size: 13px;
         font-weight: 500;
         cursor: pointer;
         margin-top: 12px;
@@ -324,172 +401,168 @@
   </head>
   <body>
     <div class="hero">
-      <h1>Save Salsa by the Sea</h1>
+      <h1>🌊 Save Salsa by the Sea</h1>
       <p>
-        We have danced freely on the Santa Cruz Wharf every Sunday for 24 years
-        — and now it's at risk. Email our city council to help us keep it going.
-        Takes 2 minutes.
+        Our permit is at risk and we've been removed from the summer calendar.
+        Our last confirmed date is April 26. Help us show the city how much
+        Salsa by the Sea matters.
       </p>
     </div>
 
-    <div class="instructions">
-      <h2>How to send</h2>
+    <div class="save-date">
+      <div class="save-date-icon">📅</div>
+      <div class="save-date-text">
+        <h3>Save the Date — SC Council Meeting on April 14 at 2:30 PM</h3>
+        <p>
+          Join us at City of Santa Cruz, 809 Center St. Wear white. Your
+          presence matters.
+        </p>
+      </div>
+    </div>
+
+    <div class="action-block">
+      <h2>How to help</h2>
       <ol>
         <li>
-          Tap the red <strong>Email City Council</strong> button — your email
-          app opens with all addresses and the message pre-filled.
+          Tap <strong>Email City Council</strong> below — everything is
+          pre-filled, just hit send
         </li>
         <li>
-          Hit send — or add your name at the end if you'd like to personalize
-          it.
+          Or call any representative directly using the numbers listed below
         </li>
+        <li>Show up on April 14th — wear white</li>
       </ol>
-      <a
-        class="send-btn"
-        id="council-btn"
-        style="
-          display: block;
-          text-align: center;
-          margin-top: 0.8em;
-          margin-bottom: 0.8em;
-          padding: 12px 20px;
-        "
-      >
-        Email City Council →
-      </a>
-      <p class="note">
+      <a class="big-btn" id="council-btn" href="#">Email City Council →</a>
+      <p class="fallback-note">
         Button not working? Scroll to the bottom to copy and send manually.
       </p>
     </div>
 
-    <div class="section-block">
-      <!-- <div class="section-label">City Council</div> -->
-      <div id="council-cards"></div>
+    <div class="accordion" id="board-accordion">
+      <button
+        class="accordion-toggle"
+        onclick="toggleAccordion('board-accordion')"
+      >
+        <span>📋 A note from the Salsa by the Sea advisory board</span>
+        <span class="accordion-arrow open" id="board-arrow">▼</span>
+      </button>
+      <div class="accordion-body visible" id="board-body">
+        <p>
+          Salsa by the Sea is at risk of losing its permit, and we need your
+          help. We have received many complaints from surrounding businesses.
+          Because of this, the city has removed us from the summer calendar, and
+          we are at risk of losing more dates.
+        </p>
+        <p>
+          Our advisory board and permit holder are in communication with the
+          city to negotiate and get us back on the calendar. As of right now,
+          our last date is April 26. While our initial strategy was to work
+          directly with them, we are now also discussing ways to bring more
+          pressure by going to the city and wharf stakeholders about how
+          important this is to so many people — because time is ticking.
+        </p>
+        <p>
+          We are working strategically, as our main goal is to get Sunday dates
+          approved for the summer, as that has the greatest immediate impact on
+          us as a community. Other goals and requests we have from the city are:
+        </p>
+        <ol>
+          <li>
+            Secure regularly occurring Sunday wharf reservations at an
+            affordable rate at sunset for the remainder of the year.
+          </li>
+          <li>
+            Support of our community as a protected cultural entity, potentially
+            through a designated Latin dance day.
+          </li>
+        </ol>
+        <p><strong>How you can support:</strong></p>
+        <ol>
+          <li>Call and email representatives — this page makes it easy.</li>
+          <li>
+            Save the date: April 14 at 2:30 PM to attend the City Council
+            meeting. A few people will be able to speak, but it's equally
+            important to have a strong, visible presence showing calm and
+            peaceful support. We know there are a lot of emotions around this.
+            For many of us, especially Latinos and people of color, this feels
+            inherently discriminatory. For the sake of strategy, we are asking
+            that you show up as calmly and peacefully as possible.
+          </li>
+          <li>
+            Please bring cash to donate to Salsa by the Sea, as fees have also
+            increased significantly.
+          </li>
+          <li>
+            If you have any skills that might be useful, DM us directly and
+            include what you can offer.
+          </li>
+        </ol>
+        <p class="disclaimer">
+          This message was written by a few individual members of the Salsa by
+          the Sea advisory board. It does not represent an official endorsement
+          or position from the board as a whole. We simply want to ensure the
+          community is informed and involved.
+        </p>
+      </div>
     </div>
 
-    <!-- <div class="section-block">
-      <div class="section-label">Parks &amp; Recreation</div>
-      <a class="send-btn" id="parks-btn" style="display: block; text-align: center; margin-bottom: 14px; padding: 12px 20px;">
-        Send to Parks & Recreation →
-      </a>
-      <div id="parks-cards"></div>
-    </div> -->
+    <div class="section-label">City Council</div>
+    <div class="contact-block" id="council-cards"></div>
 
-    <div class="accordion" id="accordion">
-      <button class="accordion-toggle" onclick="toggleAccordion()">
-        <span>Can't use the button? Send manually here</span>
-        <span class="accordion-arrow" id="arrow">▼</span>
+    <div class="section-label">Parks &amp; Recreation</div>
+    <div class="contact-block" id="parks-cards"></div>
+
+    <div class="manual-accordion" id="manual-accordion">
+      <button
+        class="accordion-toggle"
+        onclick="toggleAccordion('manual-accordion')"
+      >
+        <span>Can't use the buttons? Send manually here</span>
+        <span class="accordion-arrow" id="manual-accordion-arrow">▼</span>
       </button>
-      <div class="accordion-body" id="accordion-body">
-        <p class="accordion-intro">
-          Copy the email addresses and draft below, then paste into your email
-          app. Send one email to each person, or send one email to all of them
-          at once by putting all addresses in the To field.
+      <div class="accordion-body" id="manual-accordion-body">
+        <p class="manual-intro">
+          Copy the addresses and draft below, then paste into your email app.
+          You can email everyone at once by putting all addresses in the To
+          field.
         </p>
-
-        <div class="section-label" style="margin-top: 4px">
-          All email addresses
-        </div>
+        <div class="section-label" style="margin: 4px 0 8px">All contacts</div>
         <ul class="manual-list" id="manual-list"></ul>
-
-        <div class="section-label">Email draft</div>
-        <button
-          class="copy-btn"
-          id="copy-shared"
-          onclick="copyShared()"
-          style="margin-top: 6px"
-        >
-          Copy email draft
-        </button>
-        <div class="subject-line" style="margin-top: 12px">
+        <div class="section-label" style="margin: 4px 0 8px">Email draft</div>
+        <div class="subject-row">
           Subject: <span id="subject-display"></span>
         </div>
         <div class="divider"></div>
         <div class="email-body-text" id="shared-body"></div>
+        <button class="copy-btn" id="copy-shared" onclick="copyShared()">
+          Copy email draft
+        </button>
       </div>
     </div>
 
     <script>
       const subject =
-        "Salsa by the Sea: 24 Years of Community, Culture & Joy on the Santa Cruz Wharf – Request for Your Support";
+        "Santa Cruz Wharf's Free Sunday Latin Dance — 24 Years and Now at Risk";
 
-      const sharedBody = `Dear Santa Cruz City Council,
+      const sharedBody = `Dear [Name],
 
 We are dancers and community members who gather every Sunday at the Santa Cruz Wharf for Salsa by the Sea — a free, open Latin dance event that has been part of this city's life for nearly 24 years. We are also active participants and performers in Dancing in the Streets and community events across Santa Cruz.
 
-What started as a local tradition has grown into something with real economic and cultural impact. Dancers travel from across the county and state to attend, many of them staying overnight in Santa Cruz hotels, eating at local restaurants, and spending in the local economy beyond the Wharf. The people who show up every Sunday are the same people who run our farmers markets, staff our hospitals, cook in our restaurants, teach in our schools, attend our local schools, and build the businesses that make Santa Cruz what it is. 
+What started as a local tradition has grown into something with real economic and cultural impact. Dancers travel from across the county and state to attend, many of them staying overnight in Santa Cruz hotels, eating at local restaurants, and spending in the local economy beyond the Wharf. The people who show up every Sunday are the same people who run our farmers markets, staff our hospitals, cook in our restaurants, teach in our schools, and build the businesses that make Santa Cruz what it is.
 
 We are writing because our ability to continue using the Wharf is currently at risk. We understand there are legitimate concerns from neighboring businesses and we have been taking them seriously. Key commitments we have made include: no outside alcohol on the Wharf, packing out trash and respecting the surrounding space, using public bathrooms responsibly, parking outside the Wharf, and adhering strictly to posted dance times.
 
-We plan to speak at the next council meeting on April 14th and would be deeply grateful for your support. This could include:
+We plan to attend public comment on April 14th and would be deeply grateful for your support. This could include:
 
-- Helping us find a sustainable path to continue gathering on the Wharf on Sundays
-
-- Formally recognizing Salsa by the Sea as a cultural institution of Santa Cruz. This could include supporting a Latin Dance Day on the Wharf — a community celebration marking our 24th anniversary that invites Wharf businesses, local organizations, and the broader Santa Cruz community to participate
+— Helping us find a sustainable path to continue gathering on the Wharf on Sundays
+— Formally recognizing Salsa by the Sea as a cultural institution of Santa Cruz
+— Supporting a Latin Dance Day on the Wharf — a community celebration marking our 24th anniversary that invites Wharf businesses, local organizations, and the broader Santa Cruz community to participate alongside us
 
 Twenty-four years of free, joyful, multicultural community on a public wharf is worth protecting. We hope you agree.
 
 Thank you,
-Concerned Community Member
-Salsa by the Sea`;
-
-      document.getElementById("subject-display").textContent = subject;
-      document.getElementById("shared-body").textContent = sharedBody;
-
-      function toggleAccordion() {
-        const body = document.getElementById("accordion-body");
-        const arrow = document.getElementById("arrow");
-        body.classList.toggle("visible");
-        arrow.classList.toggle("open");
-      }
-
-      function copyShared() {
-        const btn = document.getElementById("copy-shared");
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard
-            .writeText(sharedBody)
-            .then(() => {
-              btn.textContent = "Copied!";
-              btn.classList.add("copied");
-              setTimeout(() => {
-                btn.textContent = "Copy email draft";
-                btn.classList.remove("copied");
-              }, 2000);
-            })
-            .catch(() => {
-              fallbackCopy();
-            });
-        } else {
-          fallbackCopy();
-        }
-      }
-
-      function fallbackCopy() {
-        const textArea = document.createElement("textarea");
-        textArea.value = sharedBody;
-        textArea.style.position = "fixed";
-        textArea.style.left = "-999999px";
-        document.body.appendChild(textArea);
-        textArea.focus();
-        textArea.select();
-        try {
-          document.execCommand("copy");
-          const btn = document.getElementById("copy-shared");
-          btn.textContent = "Copied!";
-          btn.classList.add("copied");
-          setTimeout(() => {
-            btn.textContent = "Copy email draft";
-            btn.classList.remove("copied");
-          }, 2000);
-        } catch (err) {
-          console.error("Failed to copy:", err);
-        }
-        document.body.removeChild(textArea);
-      }
-
-      function makeBody(firstName) {
-        return sharedBody.replace("Dear [Name],", `Dear ${firstName},`);
-      }
+Salsa by the Sea dancers
+Santa Cruz, CA`;
 
       const council = [
         {
@@ -497,135 +570,166 @@ Salsa by the Sea`;
           firstName: "Mayor Keeley",
           role: "Mayor",
           email: "fkeeley@santacruzca.gov",
+          phone: "(831) 420-5023",
         },
         {
           name: "Vice Mayor Shebreh Kalantari-Johnson",
           firstName: "Vice Mayor Kalantari-Johnson",
           role: "Vice Mayor — District 3",
           email: "skalantari-johnson@santacruzca.gov",
+          phone: "(831) 420-5022",
         },
         {
           name: "Councilmember Gabriela Trigueiro",
           firstName: "Councilmember Trigueiro",
           role: "District 1",
           email: "gtrigueiro@santacruzca.gov",
+          phone: "(831) 420-5028",
         },
         {
           name: "Councilmember Sonja Brunner",
           firstName: "Councilmember Brunner",
           role: "District 2",
           email: "sbrunner@santacruzca.gov",
+          phone: "(831) 420-5027",
         },
         {
           name: "Councilmember Scott Newsome",
           firstName: "Councilmember Newsome",
           role: "District 4",
           email: "snewsome@santacruzca.gov",
+          phone: "(831) 420-5026",
         },
         {
           name: "Councilmember Susie O'Hara",
           firstName: "Councilmember O'Hara",
           role: "District 5",
           email: "sohara@santacruzca.gov",
+          phone: "(831) 420-5024",
         },
         {
           name: "Councilmember Renee Golder",
           firstName: "Councilmember Golder",
           role: "District 6",
           email: "rgolder@santacruzca.gov",
+          phone: "(831) 420-5025",
         },
       ];
 
-      /* const parks = [
+      const parks = [
         {
           name: "Lindsay Bass",
           firstName: "Ms. Bass",
           role: "Principal Management Analyst",
           email: "lbass@santacruzca.gov",
+          phone: "(831) 420-5274",
         },
         {
           name: "Tony Elliot",
           firstName: "Mr. Elliot",
           role: "Director of Parks and Recreation",
           email: "telliot@santacruzca.gov",
+          phone: "(831) 420-5366",
         },
         {
           name: "Mike Godsy",
           firstName: "Mr. Godsy",
           role: "Superintendent of Parks",
           email: "Mike.Godsy@santacruzca.gov",
+          phone: "(831) 420-5279",
         },
         {
           name: "Tremain Hedden-Jones",
           firstName: "Mr. Hedden-Jones",
           role: "Superintendent of Recreation",
           email: "tjones@santacruzca.gov",
+          phone: "(831) 420-5272",
         },
         {
           name: "Joyce Blaschke",
           firstName: "Ms. Blaschke",
           role: "Community Relations Specialist",
           email: "jblaschke@santacruzca.gov",
+          phone: "(831) 420-5844",
         },
         {
           name: "Parks & Recreation Department",
           firstName: "Parks & Recreation Team",
-          role: "General inquiry",
+          role: "Main line",
           email: "parksandrec@santacruzca.gov",
+          phone: "(831) 420-5270",
         },
-      ]; */
+      ];
 
-      const parks = [];
       const everyone = [...council, ...parks];
 
-      function makeConsolidatedCard(groupMembers) {
-        const card = document.createElement("div");
-        card.className = "card";
-        const listHTML = groupMembers
-          .map(
-            (person) =>
-              `<li>
-          <div class="card-list-item-info">
-            <div class="card-list-name">${person.name}</div>
-            <div class="card-list-role">${person.role}</div>
-            <div class="card-list-email">${person.email}</div>
-          </div>
-        </li>`,
-          )
-          .join("");
-        card.innerHTML = `<ul class="card-list">${listHTML}</ul>`;
-        return card;
+      function makeBody(firstName) {
+        return sharedBody.replace("Dear [Name],", `Dear ${firstName},`);
       }
 
-      function makeGroupBody(groupName, firstNames) {
-        return sharedBody.replace("Dear [Name],", `Dear ${groupName},`);
+      const allEmails = council.map((p) => p.email).join(",");
+      const allBody = makeBody("City Council Members");
+      document.getElementById("council-btn").href =
+        `mailto:${allEmails}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(allBody)}`;
+
+      document.getElementById("subject-display").textContent = subject;
+      document.getElementById("shared-body").textContent = sharedBody;
+
+      function toggleAccordion(id) {
+        const accordion = document.getElementById(id);
+        const body = accordion.querySelector(".accordion-body");
+        const arrow = accordion.querySelector(".accordion-arrow");
+        body.classList.toggle("visible");
+        arrow.classList.toggle("open");
       }
 
-      document
-        .getElementById("council-cards")
-        .appendChild(makeConsolidatedCard(council));
-      /* document
-        .getElementById("parks-cards")
-        .appendChild(makeConsolidatedCard(parks)); */
+      function copyShared() {
+        navigator.clipboard.writeText(sharedBody).then(() => {
+          const btn = document.getElementById("copy-shared");
+          btn.textContent = "Copied!";
+          btn.classList.add("copied");
+          setTimeout(() => {
+            btn.textContent = "Copy email draft";
+            btn.classList.remove("copied");
+          }, 2000);
+        });
+      }
 
-      // Set up group send buttons
-      const councilEmails = council.map((p) => p.email).join(",");
-      const councilBody = makeGroupBody(
-        "City Council",
-        council.map((p) => p.firstName),
+      function makeCard(person) {
+        const emailBody = makeBody(person.firstName);
+        const mailto = `mailto:${person.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+        const item = document.createElement("div");
+        item.className = "contact-item";
+        item.innerHTML = `
+    <div class="contact-info">
+      <div class="contact-name">${person.name}</div>
+      <div class="contact-role">${person.role}</div>
+      <div class="contact-details">
+        ${person.email} &nbsp;·&nbsp; <a href="tel:${person.phone}">${person.phone}</a>
+      </div>
+    </div>
+    <a class="email-btn" href="${mailto}">Email →</a>
+  `;
+        return item;
+      }
+
+      council.forEach((p) =>
+        document.getElementById("council-cards").appendChild(makeCard(p)),
       );
-      const councilMailto = `mailto:${councilEmails}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(councilBody)}`;
-      document.getElementById("council-btn").href = councilMailto;
-
-      /* const parksEmails = parks.map((p) => p.email).join(",");
-      const parksBody = makeGroupBody("Parks and Recreation", parks.map((p) => p.firstName));
-      const parksMailto = `mailto:${parksEmails}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(parksBody)}`;
-      document.getElementById("parks-btn").href = parksMailto; */
+      parks.forEach((p) =>
+        document.getElementById("parks-cards").appendChild(makeCard(p)),
+      );
 
       const manualList = document.getElementById("manual-list");
       everyone.forEach((p) => {
         const li = document.createElement("li");
-        li.innerHTML = `<span class="manual-name">${p.name}</span><span class="manual-email">${p.email}</span>`;
+        li.innerHTML = `
+    <span class="manual-name">${p.name}</span>
+    <span class="manual-contact">
+      <span class="manual-email">${p.email}</span>
+      <span class="manual-phone">${p.phone}</span>
+    </span>
+  `;
         manualList.appendChild(li);
       });
     </script>

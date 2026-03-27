@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- description -->
+    <meta
+      name="description"
+      content="We have danced freely on the Santa Cruz Wharf every Sunday for 24 years — and now it's at risk. Email our city council to help us keep it going. Takes 2 minutes."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75'>💃</text></svg>"
+    />
+    <title>🌊 Save Salsa by the Sea 🌊</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #f7f5f2;
+        color: #1a1a1a;
+        padding: 24px 16px 64px;
+        max-width: 680px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=800&fit=crop");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        filter: blur(8px);
+        z-index: -1;
+        opacity: 0.3;
+      }
+
+      .hero {
+        background: #c8392b;
+        color: white;
+        border-radius: 12px;
+        padding: 24px 20px;
+        margin-bottom: 20px;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+      }
+      .hero h1 {
+        font-size: 1.25em;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+      .hero p {
+        font-size: 0.875em;
+        opacity: 0.9;
+        line-height: 1.6;
+      }
+
+      .instructions {
+        background: white;
+        border-radius: 12px;
+        border: 1px solid #e8e4de;
+        padding: 16px 20px;
+        margin-bottom: 28px;
+        position: relative;
+        z-index: 1;
+      }
+      .instructions h2 {
+        font-size: 0.875em;
+        font-weight: 600;
+        color: #0d7377;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .instructions ol {
+        padding-left: 18px;
+      }
+      .instructions li {
+        font-size: 0.875em;
+        color: #444;
+        line-height: 1.8;
+      }
+      .instructions .note {
+        font-size: 0.8125em;
+        color: #e8820c;
+        margin-top: 10px;
+        font-weight: 600;
+        padding: 8px 12px;
+        background: rgba(245, 150, 56, 0.15);
+        border-left: 4px solid #e8820c;
+        border-radius: 4px;
+      }
+
+      .section-label {
+        font-size: 0.75em;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #999;
+        margin: 0 0 12px;
+      }
+      .section-block {
+        margin-bottom: 32px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .card {
+        background: white;
+        border-radius: 12px;
+        border: 1px solid #e8e4de;
+        margin-bottom: 10px;
+        padding: 14px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 1;
+      }
+      .card-info {
+        flex: 1;
+        min-width: 0;
+      }
+      .card-name {
+        font-size: 0.9375em;
+        font-weight: 600;
+        color: #1a1a1a;
+      }
+      .card-role {
+        font-size: 0.8125em;
+        color: #888;
+        margin-top: 2px;
+      }
+      .card-email-addr {
+        font-size: 0.75em;
+        color: #bbb;
+        margin-top: 2px;
+        word-break: break-all;
+      }
+      .card-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .card-list li {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+        padding: 12px 0;
+        border-bottom: 1px solid #f0ece6;
+        align-items: baseline;
+      }
+      .card-list li:last-child {
+        border-bottom: none;
+      }
+      .card-list-item-info {
+        flex: 1;
+        min-width: 0;
+      }
+      .card-list-name {
+        font-size: 0.9375em;
+        font-weight: 600;
+        color: #1a1a1a;
+      }
+      .card-list-role {
+        font-size: 0.8125em;
+        color: #888;
+        margin-top: 2px;
+      }
+      .card-list-email {
+        font-size: 0.75em;
+        color: #bbb;
+        margin-top: 2px;
+        word-break: break-all;
+      }
+      .send-btn {
+        background: #c8392b;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 18px;
+        font-size: 0.875em;
+        font-weight: 500;
+        text-decoration: none;
+        white-space: nowrap;
+        cursor: pointer;
+        display: inline-block;
+      }
+      .send-btn:active {
+        opacity: 0.85;
+      }
+
+      .accordion {
+        background: white;
+        border-radius: 12px;
+        border: 2px solid #0d7377;
+        margin-top: 40px;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+      }
+      .accordion-toggle {
+        width: 100%;
+        padding: 16px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 0.875em;
+        font-weight: 600;
+        color: #0d7377;
+        text-align: left;
+      }
+      .accordion-toggle:hover {
+        background: #f0fafa;
+      }
+      .accordion-arrow {
+        font-size: 0.75em;
+        color: #0d7377;
+        transition: transform 0.2s;
+      }
+      .accordion-arrow.open {
+        transform: rotate(180deg);
+      }
+      .accordion-body {
+        display: none;
+        padding: 0 20px 20px;
+        border-top: 1px solid #d0eeee;
+      }
+      .accordion-body.visible {
+        display: block;
+      }
+      .accordion-intro {
+        font-size: 0.8125em;
+        color: #555;
+        line-height: 1.6;
+        margin: 14px 0 16px;
+      }
+      .manual-list {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 20px;
+      }
+      .manual-list li {
+        font-size: 0.8125em;
+        color: #444;
+        padding: 6px 0;
+        border-bottom: 1px solid #f0ece6;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .manual-list li:last-child {
+        border-bottom: none;
+      }
+      .manual-name {
+        font-weight: 600;
+      }
+      .manual-email {
+        color: #0d7377;
+        word-break: break-all;
+      }
+      .subject-line {
+        font-size: 0.8125em;
+        color: #666;
+        margin-bottom: 10px;
+      }
+      .subject-line span {
+        font-weight: 600;
+        color: #1a1a1a;
+      }
+      .divider {
+        height: 1px;
+        background: #e8e4de;
+        margin: 10px 0 14px;
+      }
+      .email-body-text {
+        font-size: 0.8125em;
+        color: #444;
+        line-height: 1.75;
+        white-space: pre-wrap;
+        background: #faf9f7;
+        border-radius: 8px;
+        padding: 14px 16px;
+        border: 1px solid #ede9e3;
+      }
+      .copy-btn {
+        background: #0d7377;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 9px 16px;
+        font-size: 0.8125em;
+        font-weight: 500;
+        cursor: pointer;
+        margin-top: 12px;
+        display: inline-block;
+      }
+      .copy-btn:hover {
+        background: #0a5f63;
+      }
+      .copy-btn.copied {
+        background: #2e7d32;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <h1>Save Salsa by the Sea</h1>
+      <p>
+        We have danced freely on the Santa Cruz Wharf every Sunday for 24 years
+        — and now it's at risk. Email our city council to help us keep it going.
+        Takes 2 minutes.
+      </p>
+    </div>
+
+    <div class="instructions">
+      <h2>How to send</h2>
+      <ol>
+        <li>
+          Tap the red <strong>Email City Council</strong> button — your email
+          app opens with all addresses and the message pre-filled.
+        </li>
+        <li>
+          Hit send — or add your name at the end if you'd like to personalize
+          it.
+        </li>
+      </ol>
+      <a
+        class="send-btn"
+        id="council-btn"
+        style="
+          display: block;
+          text-align: center;
+          margin-top: 0.8em;
+          margin-bottom: 0.8em;
+          padding: 12px 20px;
+        "
+      >
+        Email City Council →
+      </a>
+      <p class="note">
+        Button not working? Scroll to the bottom to copy and send manually.
+      </p>
+    </div>
+
+    <div class="section-block">
+      <!-- <div class="section-label">City Council</div> -->
+      <div id="council-cards"></div>
+    </div>
+
+    <!-- <div class="section-block">
+      <div class="section-label">Parks &amp; Recreation</div>
+      <a class="send-btn" id="parks-btn" style="display: block; text-align: center; margin-bottom: 14px; padding: 12px 20px;">
+        Send to Parks & Recreation →
+      </a>
+      <div id="parks-cards"></div>
+    </div> -->
+
+    <div class="accordion" id="accordion">
+      <button class="accordion-toggle" onclick="toggleAccordion()">
+        <span>Can't use the button? Send manually here</span>
+        <span class="accordion-arrow" id="arrow">▼</span>
+      </button>
+      <div class="accordion-body" id="accordion-body">
+        <p class="accordion-intro">
+          Copy the email addresses and draft below, then paste into your email
+          app. Send one email to each person, or send one email to all of them
+          at once by putting all addresses in the To field.
+        </p>
+
+        <div class="section-label" style="margin-top: 4px">
+          All email addresses
+        </div>
+        <ul class="manual-list" id="manual-list"></ul>
+
+        <div class="section-label">Email draft</div>
+        <button
+          class="copy-btn"
+          id="copy-shared"
+          onclick="copyShared()"
+          style="margin-top: 6px"
+        >
+          Copy email draft
+        </button>
+        <div class="subject-line" style="margin-top: 12px">
+          Subject: <span id="subject-display"></span>
+        </div>
+        <div class="divider"></div>
+        <div class="email-body-text" id="shared-body"></div>
+      </div>
+    </div>
+
+    <script>
+      const subject =
+        "Salsa by the Sea: 24 Years of Community, Culture & Joy on the Santa Cruz Wharf – Request for Your Support";
+
+      const sharedBody = `Dear Santa Cruz City Council,
+
+We are dancers and community members who gather every Sunday at the Santa Cruz Wharf for Salsa by the Sea — a free, open Latin dance event that has been part of this city's life for nearly 24 years. We are also active participants and performers in Dancing in the Streets and community events across Santa Cruz.
+
+What started as a local tradition has grown into something with real economic and cultural impact. Dancers travel from across the county and state to attend, many of them staying overnight in Santa Cruz hotels, eating at local restaurants, and spending in the local economy beyond the Wharf. The people who show up every Sunday are the same people who run our farmers markets, staff our hospitals, cook in our restaurants, teach in our schools, attend our local schools, and build the businesses that make Santa Cruz what it is. 
+
+We are writing because our ability to continue using the Wharf is currently at risk. We understand there are legitimate concerns from neighboring businesses and we have been taking them seriously. Key commitments we have made include: no outside alcohol on the Wharf, packing out trash and respecting the surrounding space, using public bathrooms responsibly, parking outside the Wharf, and adhering strictly to posted dance times.
+
+We plan to speak at the next council meeting on April 14th and would be deeply grateful for your support. This could include:
+
+- Helping us find a sustainable path to continue gathering on the Wharf on Sundays
+
+- Formally recognizing Salsa by the Sea as a cultural institution of Santa Cruz. This could include supporting a Latin Dance Day on the Wharf — a community celebration marking our 24th anniversary that invites Wharf businesses, local organizations, and the broader Santa Cruz community to participate
+
+Twenty-four years of free, joyful, multicultural community on a public wharf is worth protecting. We hope you agree.
+
+Thank you,
+Concerned Community Member
+Salsa by the Sea`;
+
+      document.getElementById("subject-display").textContent = subject;
+      document.getElementById("shared-body").textContent = sharedBody;
+
+      function toggleAccordion() {
+        const body = document.getElementById("accordion-body");
+        const arrow = document.getElementById("arrow");
+        body.classList.toggle("visible");
+        arrow.classList.toggle("open");
+      }
+
+      function copyShared() {
+        const btn = document.getElementById("copy-shared");
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard
+            .writeText(sharedBody)
+            .then(() => {
+              btn.textContent = "Copied!";
+              btn.classList.add("copied");
+              setTimeout(() => {
+                btn.textContent = "Copy email draft";
+                btn.classList.remove("copied");
+              }, 2000);
+            })
+            .catch(() => {
+              fallbackCopy();
+            });
+        } else {
+          fallbackCopy();
+        }
+      }
+
+      function fallbackCopy() {
+        const textArea = document.createElement("textarea");
+        textArea.value = sharedBody;
+        textArea.style.position = "fixed";
+        textArea.style.left = "-999999px";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        try {
+          document.execCommand("copy");
+          const btn = document.getElementById("copy-shared");
+          btn.textContent = "Copied!";
+          btn.classList.add("copied");
+          setTimeout(() => {
+            btn.textContent = "Copy email draft";
+            btn.classList.remove("copied");
+          }, 2000);
+        } catch (err) {
+          console.error("Failed to copy:", err);
+        }
+        document.body.removeChild(textArea);
+      }
+
+      function makeBody(firstName) {
+        return sharedBody.replace("Dear [Name],", `Dear ${firstName},`);
+      }
+
+      const council = [
+        {
+          name: "Mayor Fred Keeley",
+          firstName: "Mayor Keeley",
+          role: "Mayor",
+          email: "fkeeley@santacruzca.gov",
+        },
+        {
+          name: "Vice Mayor Shebreh Kalantari-Johnson",
+          firstName: "Vice Mayor Kalantari-Johnson",
+          role: "Vice Mayor — District 3",
+          email: "skalantari-johnson@santacruzca.gov",
+        },
+        {
+          name: "Councilmember Gabriela Trigueiro",
+          firstName: "Councilmember Trigueiro",
+          role: "District 1",
+          email: "gtrigueiro@santacruzca.gov",
+        },
+        {
+          name: "Councilmember Sonja Brunner",
+          firstName: "Councilmember Brunner",
+          role: "District 2",
+          email: "sbrunner@santacruzca.gov",
+        },
+        {
+          name: "Councilmember Scott Newsome",
+          firstName: "Councilmember Newsome",
+          role: "District 4",
+          email: "snewsome@santacruzca.gov",
+        },
+        {
+          name: "Councilmember Susie O'Hara",
+          firstName: "Councilmember O'Hara",
+          role: "District 5",
+          email: "sohara@santacruzca.gov",
+        },
+        {
+          name: "Councilmember Renee Golder",
+          firstName: "Councilmember Golder",
+          role: "District 6",
+          email: "rgolder@santacruzca.gov",
+        },
+      ];
+
+      /* const parks = [
+        {
+          name: "Lindsay Bass",
+          firstName: "Ms. Bass",
+          role: "Principal Management Analyst",
+          email: "lbass@santacruzca.gov",
+        },
+        {
+          name: "Tony Elliot",
+          firstName: "Mr. Elliot",
+          role: "Director of Parks and Recreation",
+          email: "telliot@santacruzca.gov",
+        },
+        {
+          name: "Mike Godsy",
+          firstName: "Mr. Godsy",
+          role: "Superintendent of Parks",
+          email: "Mike.Godsy@santacruzca.gov",
+        },
+        {
+          name: "Tremain Hedden-Jones",
+          firstName: "Mr. Hedden-Jones",
+          role: "Superintendent of Recreation",
+          email: "tjones@santacruzca.gov",
+        },
+        {
+          name: "Joyce Blaschke",
+          firstName: "Ms. Blaschke",
+          role: "Community Relations Specialist",
+          email: "jblaschke@santacruzca.gov",
+        },
+        {
+          name: "Parks & Recreation Department",
+          firstName: "Parks & Recreation Team",
+          role: "General inquiry",
+          email: "parksandrec@santacruzca.gov",
+        },
+      ]; */
+
+      const parks = [];
+      const everyone = [...council, ...parks];
+
+      function makeConsolidatedCard(groupMembers) {
+        const card = document.createElement("div");
+        card.className = "card";
+        const listHTML = groupMembers
+          .map(
+            (person) =>
+              `<li>
+          <div class="card-list-item-info">
+            <div class="card-list-name">${person.name}</div>
+            <div class="card-list-role">${person.role}</div>
+            <div class="card-list-email">${person.email}</div>
+          </div>
+        </li>`,
+          )
+          .join("");
+        card.innerHTML = `<ul class="card-list">${listHTML}</ul>`;
+        return card;
+      }
+
+      function makeGroupBody(groupName, firstNames) {
+        return sharedBody.replace("Dear [Name],", `Dear ${groupName},`);
+      }
+
+      document
+        .getElementById("council-cards")
+        .appendChild(makeConsolidatedCard(council));
+      /* document
+        .getElementById("parks-cards")
+        .appendChild(makeConsolidatedCard(parks)); */
+
+      // Set up group send buttons
+      const councilEmails = council.map((p) => p.email).join(",");
+      const councilBody = makeGroupBody(
+        "City Council",
+        council.map((p) => p.firstName),
+      );
+      const councilMailto = `mailto:${councilEmails}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(councilBody)}`;
+      document.getElementById("council-btn").href = councilMailto;
+
+      /* const parksEmails = parks.map((p) => p.email).join(",");
+      const parksBody = makeGroupBody("Parks and Recreation", parks.map((p) => p.firstName));
+      const parksMailto = `mailto:${parksEmails}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(parksBody)}`;
+      document.getElementById("parks-btn").href = parksMailto; */
+
+      const manualList = document.getElementById("manual-list");
+      everyone.forEach((p) => {
+        const li = document.createElement("li");
+        li.innerHTML = `<span class="manual-name">${p.name}</span><span class="manual-email">${p.email}</span>`;
+        manualList.appendChild(li);
+      });
+    </script>
+  </body>
+</html>
