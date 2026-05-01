@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Save Salsa by the Sea</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f7f5f2; color: #1a1a1a; padding: 0 0 64px; max-width: 680px; margin: 0 auto; }
+
+  .hero { background: #c8392b; color: white; padding: 32px 20px 28px; text-align: center; }
+  .hero h1 { font-size: 26px; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.3px; }
+  .hero p { font-size: 15px; opacity: 0.92; line-height: 1.65; max-width: 480px; margin: 0 auto; }
+
+  .save-date { background: #fff8e1; border-left: 4px solid #f59638; margin: 20px 16px 0; border-radius: 10px; padding: 16px 18px; display: flex; align-items: center; gap: 14px; }
+  .save-date-icon { font-size: 28px; flex-shrink: 0; }
+  .save-date-text h3 { font-size: 15px; font-weight: 700; color: #b35c00; margin-bottom: 3px; }
+  .save-date-text p { font-size: 13px; color: #7a4500; line-height: 1.5; }
+
+  .action-block { background: white; border-radius: 14px; border: 1px solid #e8e4de; margin: 16px 16px 0; padding: 20px; }
+  .action-block h2 { font-size: 14px; font-weight: 700; color: #0d7377; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; }
+  .action-block ol { padding-left: 18px; }
+  .action-block li { font-size: 14px; color: #444; line-height: 1.8; }
+
+  .big-btn { display: block; background: #c8392b; color: white; text-align: center; border: none; border-radius: 10px; padding: 16px; font-size: 16px; font-weight: 600; text-decoration: none; cursor: pointer; margin: 12px 0 0; letter-spacing: 0.01em; }
+  .big-btn:active { opacity: 0.88; }
+  .big-btn.teal { background: #0d7377; margin-top: 10px; }
+
+  .fallback-note { font-size: 13px; color: #f59638; margin-top: 10px; padding: 10px 14px; background: #fff8e1; border-left: 3px solid #f59638; border-radius: 6px; }
+
+  .accordion { background: white; border-radius: 14px; border: 1px solid #e8e4de; margin: 16px 16px 0; overflow: hidden; }
+  .accordion-toggle { width: 100%; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; background: none; border: none; cursor: pointer; font-size: 14px; font-weight: 600; color: #1a1a1a; text-align: left; }
+  .accordion-toggle:hover { background: #faf9f7; }
+  .accordion-arrow { font-size: 11px; color: #aaa; transition: transform 0.2s; }
+  .accordion-arrow.open { transform: rotate(180deg); }
+  .accordion-body { display: none; padding: 0 20px 20px; border-top: 1px solid #f0ece6; }
+  .accordion-body.visible { display: block; }
+  .accordion-body p { font-size: 14px; color: #444; line-height: 1.75; margin-top: 14px; }
+  .accordion-body ol, .accordion-body ul { padding-left: 18px; margin-top: 10px; }
+  .accordion-body li { font-size: 14px; color: #444; line-height: 1.8; margin-bottom: 4px; }
+  .accordion-body .disclaimer { font-size: 12px; color: #999; margin-top: 16px; font-style: italic; line-height: 1.6; }
+
+  .section-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.09em; color: #bbb; margin: 24px 16px 8px; }
+
+  .contact-block { background: white; border-radius: 14px; border: 1px solid #e8e4de; margin: 0 16px; overflow: hidden; }
+  .contact-item { padding: 14px 20px; border-bottom: 1px solid #f5f2ee; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .contact-item:last-child { border-bottom: none; }
+  .contact-info { flex: 1; min-width: 0; }
+  .contact-name { font-size: 15px; font-weight: 600; color: #1a1a1a; }
+  .contact-role { font-size: 13px; color: #888; margin-top: 1px; }
+  .contact-details { font-size: 12px; color: #bbb; margin-top: 3px; }
+  .contact-details a { color: #0d7377; text-decoration: none; }
+  .email-btn { background: #c8392b; color: white; border: none; border-radius: 8px; padding: 9px 14px; font-size: 13px; font-weight: 500; text-decoration: none; white-space: nowrap; cursor: pointer; display: inline-block; flex-shrink: 0; }
+  .email-btn:active { opacity: 0.85; }
+
+  .manual-accordion { background: white; border-radius: 14px; border: 2px solid #0d7377; margin: 16px 16px 0; overflow: hidden; }
+  .manual-accordion .accordion-toggle { color: #0d7377; }
+  .manual-accordion .accordion-toggle:hover { background: #f0fafa; }
+  .manual-accordion .accordion-body { border-top: 1px solid #d0eeee; }
+  .manual-intro { font-size: 13px; color: #555; line-height: 1.6; margin: 14px 0 16px; }
+  .manual-list { list-style: none; padding: 0; margin-bottom: 20px; }
+  .manual-list li { font-size: 13px; color: #444; padding: 8px 0; border-bottom: 1px solid #f0ece6; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .manual-list li:last-child { border-bottom: none; }
+  .manual-name { font-weight: 600; }
+  .manual-contact { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
+  .manual-email { color: #0d7377; word-break: break-all; font-size: 12px; }
+  .manual-phone { color: #888; font-size: 12px; }
+  .subject-row { font-size: 13px; color: #666; margin-bottom: 10px; }
+  .subject-row span { font-weight: 600; color: #1a1a1a; }
+  .divider { height: 1px; background: #e8e4de; margin: 10px 0 14px; }
+  .email-body-text { font-size: 13px; color: #444; line-height: 1.75; white-space: pre-wrap; background: #faf9f7; border-radius: 8px; padding: 14px 16px; border: 1px solid #ede9e3; }
+  .copy-btn { background: #0d7377; color: white; border: none; border-radius: 6px; padding: 9px 16px; font-size: 13px; font-weight: 500; cursor: pointer; margin-top: 12px; display: inline-block; }
+  .copy-btn:hover { background: #0a5f63; }
+  .copy-btn.copied { background: #2e7d32; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>🌊 Save Salsa by the Sea</h1>
+
+</div>
+
+<div class="save-date">
+  <div class="save-date-icon">🌊</div>
+  <div class="save-date-text">
+    <h3>Help Us Return to Ideal Bar & Grill May through September 2026</h3>
+    <p>We have no confirmed dates to dance on the Wharf May through September. The city has offered October as our return date, which is fantastic! — and our community would love to dance at Ideal Bar &amp; Grill during the summer. Help us show the city how much Salsa by the Sea matters.</p>
+  </div>
+</div>
+
+<div class="action-block">
+  <h2>How to help</h2>
+  <ol>
+    <li>Tap <strong>Email City Council</strong> below — everything is pre-filled, just hit send</li>
+    <li>Or call any representative directly using the numbers listed below</li>
+  </ol>
+  <a class="big-btn" id="council-btn" href="#">Email City Council →</a>
+  <p class="fallback-note">Button not working? Scroll to the bottom to copy and send manually.</p>
+</div>
+
+<div class="accordion" id="board-accordion">
+  <button class="accordion-toggle" onclick="toggleAccordion('board-accordion')">
+    <span>📋 A note from the Salsa by the Sea advisory board</span>
+    <span class="accordion-arrow open" id="board-arrow">▼</span>
+  </button>
+  <div class="accordion-body visible" id="board-body">
+    <p>Salsa by the Sea has successfully secured dance dates at the Wharf in October 2026. Our hope is to find a place to dance on the Wharf for the months of May through September, ideally at Ideal Bar &amp; Grill.</p>
+    <p><strong>How you can support:</strong></p>
+    <ol>
+      <li>Call and email representatives — this page makes it easy.</li>
+      <li>Please bring cash to donate to Salsa by the Sea, as fees have also increased significantly.</li>
+      <li>If you have any skills that might be useful, DM us directly and include what you can offer.</li>
+    </ol>
+    <p class="disclaimer">This message was written by a few individual members of the Salsa by the Sea advisory board. It does not represent an official endorsement or position from the board as a whole. We simply want to ensure the community is informed and involved.</p>
+  </div>
+</div>
+
+<div class="section-label">City Council</div>
+<div class="contact-block" id="council-cards"></div>
+
+<div class="section-label">Parks &amp; Recreation</div>
+<div class="contact-block" id="parks-cards"></div>
+
+<div class="manual-accordion" id="manual-accordion">
+  <button class="accordion-toggle" onclick="toggleAccordion('manual-accordion')">
+    <span>Can't use the buttons? Send manually here</span>
+    <span class="accordion-arrow" id="manual-accordion-arrow">▼</span>
+  </button>
+  <div class="accordion-body" id="manual-accordion-body">
+    <p class="manual-intro">Copy the addresses and draft below, then paste into your email app. You can email everyone at once by putting all addresses in the To field.</p>
+    <div class="section-label" style="margin: 4px 0 8px;">All contacts</div>
+    <ul class="manual-list" id="manual-list"></ul>
+    <div class="section-label" style="margin: 4px 0 8px;">Email draft</div>
+    <div class="subject-row">Subject: <span id="subject-display"></span></div>
+    <div class="divider"></div>
+    <div class="email-body-text" id="shared-body"></div>
+    <button class="copy-btn" id="copy-shared" onclick="copyShared()">Copy email draft</button>
+  </div>
+</div>
+
+<script>
+const subject = "A Request for Salsa by the Sea to Return This Summer";
+
+const sharedBody = `Dear City Council Members,
+
+Thank you for your support in working with Salsa by the Sea to secure dates back on the Wharf in October. We genuinely appreciate it.
+
+We are writing to ask for your continued help. The summer months — May through September — are when the days are longest, the weather is warmest, and our community comes alive on the Wharf. We would love to work with you to secure Sunday dates at Ideal Bar & Grill during those months.
+
+Twenty-four years of free, joyful, multicultural gathering on a public wharf is worth protecting. We hope you'll help us keep it going through the summer.
+
+Thank you,
+Salsa by the Sea dancers
+Santa Cruz, CA`;
+
+const council = [
+  { name: "Mayor Fred Keeley", firstName: "Mayor Keeley", role: "Mayor", email: "fkeeley@santacruzca.gov", phone: "(831) 420-5023" },
+  { name: "Vice Mayor Shebreh Kalantari-Johnson", firstName: "Vice Mayor Kalantari-Johnson", role: "Vice Mayor — District 3", email: "skalantari-johnson@santacruzca.gov", phone: "(831) 420-5022" },
+  { name: "Councilmember Gabriela Trigueiro", firstName: "Councilmember Trigueiro", role: "District 1", email: "gtrigueiro@santacruzca.gov", phone: "(831) 420-5028" },
+  { name: "Councilmember Sonja Brunner", firstName: "Councilmember Brunner", role: "District 2", email: "sbrunner@santacruzca.gov", phone: "(831) 420-5027" },
+  { name: "Councilmember Scott Newsome", firstName: "Councilmember Newsome", role: "District 4", email: "snewsome@santacruzca.gov", phone: "(831) 420-5026" },
+  { name: "Councilmember Susie O'Hara", firstName: "Councilmember O'Hara", role: "District 5", email: "sohara@santacruzca.gov", phone: "(831) 420-5024" },
+  { name: "Councilmember Renee Golder", firstName: "Councilmember Golder", role: "District 6", email: "rgolder@santacruzca.gov", phone: "(831) 420-5025" }
+];
+
+const parks = [
+  { name: "Lindsay Bass", firstName: "Ms. Bass", role: "Principal Management Analyst", email: "lbass@santacruzca.gov", phone: "(831) 420-5274" },
+  { name: "Tony Elliot", firstName: "Mr. Elliot", role: "Director of Parks and Recreation", email: "telliot@santacruzca.gov", phone: "(831) 420-5366" },
+  { name: "Mike Godsy", firstName: "Mr. Godsy", role: "Superintendent of Parks", email: "Mike.Godsy@santacruzca.gov", phone: "(831) 420-5279" },
+  { name: "Tremain Hedden-Jones", firstName: "Mr. Hedden-Jones", role: "Superintendent of Recreation", email: "tjones@santacruzca.gov", phone: "(831) 420-5272" },
+  { name: "Joyce Blaschke", firstName: "Ms. Blaschke", role: "Community Relations Specialist", email: "jblaschke@santacruzca.gov", phone: "(831) 420-5844" },
+  { name: "Parks & Recreation Department", firstName: "Parks & Recreation Team", role: "Main line", email: "parksandrec@santacruzca.gov", phone: "(831) 420-5270" }
+];
+
+const everyone = [...council, ...parks];
+
+function makeBody(firstName) {
+  return sharedBody.replace('Dear [Name],', `Dear ${firstName},`);
+}
+
+const allEmails = council.map(p => p.email).join(',');
+const allBody = makeBody('City Council Members');
+document.getElementById('council-btn').href = `mailto:${allEmails}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(allBody)}`;
+
+document.getElementById('subject-display').textContent = subject;
+document.getElementById('shared-body').textContent = sharedBody;
+
+function toggleAccordion(id) {
+  const accordion = document.getElementById(id);
+  const body = accordion.querySelector('.accordion-body');
+  const arrow = accordion.querySelector('.accordion-arrow');
+  body.classList.toggle('visible');
+  arrow.classList.toggle('open');
+}
+
+function copyShared() {
+  navigator.clipboard.writeText(sharedBody).then(() => {
+    const btn = document.getElementById('copy-shared');
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy email draft'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+
+function makeCard(person) {
+  const emailBody = makeBody(person.firstName);
+  const mailto = `mailto:${person.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+  const item = document.createElement('div');
+  item.className = 'contact-item';
+  item.innerHTML = `
+    <div class="contact-info">
+      <div class="contact-name">${person.name}</div>
+      <div class="contact-role">${person.role}</div>
+      <div class="contact-details">
+        ${person.email} &nbsp;·&nbsp; <a href="tel:${person.phone}">${person.phone}</a>
+      </div>
+    </div>
+    <a class="email-btn" href="${mailto}">Email →</a>
+  `;
+  return item;
+}
+
+council.forEach(p => document.getElementById('council-cards').appendChild(makeCard(p)));
+parks.forEach(p => document.getElementById('parks-cards').appendChild(makeCard(p)));
+
+const manualList = document.getElementById('manual-list');
+everyone.forEach(p => {
+  const li = document.createElement('li');
+  li.innerHTML = `
+    <span class="manual-name">${p.name}</span>
+    <span class="manual-contact">
+      <span class="manual-email">${p.email}</span>
+      <span class="manual-phone">${p.phone}</span>
+    </span>
+  `;
+  manualList.appendChild(li);
+});
+</script>
+</body>
+</html>
